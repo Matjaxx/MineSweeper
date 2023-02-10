@@ -4,6 +4,7 @@ public class map {
     String[][] m_map;
     String[][] player_map;
     void printMap(){
+        //Display map solution//
         System.out.println("");
         System.out.println("");
         System.out.println("");
@@ -23,6 +24,7 @@ public class map {
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_PURPLE = "\u001B[35m";
     void printPlayerMap(){
+        //Display player map//
         System.out.println("");
         System.out.println("");
         System.out.println("");
@@ -68,6 +70,7 @@ public class map {
         }
     }
     void creatingMap(int sizing){
+        //Create MAP//
         if (sizing == 1){
             m_map = new String[8][8];
             player_map = new String[9][9];
@@ -115,7 +118,7 @@ public class map {
         else if(m_map[0].length == 29){
             bombe = 100;
         }
-
+        //Bomb generation and look that the forst play can be a bomb//
 
         for (int c=0; c < bombe; c++) {
             int x;
@@ -158,6 +161,7 @@ public class map {
     }
 
     void foungingCaseValue(){
+        //Look bomb around case//
         int countBombeAround=0;
         for (int i=0; i < m_map.length; i++) {
             for (int k=0; k < m_map[0].length; k++) {
@@ -277,6 +281,7 @@ public class map {
     }
 
     void foundWhatNextToZero(){
+        //Player discover case next to a 0 bomb area//
         for (int i = 1; i < player_map.length; i++) {
             for (int k = 1; k < player_map[0].length; k++) {
                 if (player_map[i][k] != "X" && player_map[i][k] != "B") {
